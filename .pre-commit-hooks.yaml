@@ -1,6 +1,6 @@
 - id: spdx-license-checker
   name: SPDX License Checker Hook
   description: Check for SPDX license identifiers in files
-  entry: main
+  entry: spdx_checker_pre_commit
   language: python
   stages: [pre-commit]

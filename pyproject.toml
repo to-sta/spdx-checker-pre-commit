@@ -14,7 +14,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["spdx-checker-pre-commit*"]
+include = ["spdx_checker_pre_commit*"]
 
 [tool.setuptools.package-dir]
 "" = "src"
