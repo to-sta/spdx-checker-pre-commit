@@ -1,6 +1,20 @@
 [project]
 name = "spdx-checker-pre-commit"
+description = "A pre-commit hook to check for SPDX license identifiers in files."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Tobias Stach", email = "tobias.stach@gmail.com" }]
 version = "0.1.0"
-dependencies = [
-    "spdx-checker>=0.1.0",
-]
+dependencies = ["spdx-checker>=0.1.0"]
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["setuptools >= 77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["spdx-checker-pre-commit*"]
+
+[tool.setuptools.package-dir]
+"" = "src"
