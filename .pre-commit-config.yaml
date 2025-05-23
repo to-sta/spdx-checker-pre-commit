@@ -1,0 +1,8 @@
+repos:
+  - repo: <...>
+    hooks:
+      - id: spdx-license-checker
+        name: SPDX License Checker
+
+        
+

@@ -1,0 +1,6 @@
+[project]
+name = "spdx-checker-pre-commit"
+version = "0.1.0"
+dependencies = [
+    "spdx-checker>=0.1.0",
+]
