@@ -8,6 +8,9 @@ version = "0.1.0"
 dependencies = ["spdx-checker>=0.1.0"]
 requires-python = ">=3.11"
 
+[project.scripts]
+spdx_checker_pre_commit = "spdx_checker_pre_commit.__main__:main"
+
 [build-system]
 requires = ["setuptools >= 77.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
