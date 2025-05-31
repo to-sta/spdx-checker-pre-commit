@@ -39,7 +39,7 @@ This repository provides a [pre-commit](https://pre-commit.com/) hook for valida
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.13+
 - [`spdx-checker`](https://pypi.org/project/spdx-checker/)
 
 ## License
