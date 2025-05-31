@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from argparse import ArgumentParser
 from typing import Sequence
-from spdx_checker import spdx_checker
+import spdx_checker
 
 
 def main(argv: Sequence[str] | None = None) -> None:
@@ -38,7 +38,7 @@ def main(argv: Sequence[str] | None = None) -> None:
         parser.print_help()
         raise ValueError("License and filenames are required arguments.")
 
-    spdx_checker.spdx_license_checker(args.license, args.filenames)
+    spdx_checker.check_license(args.license, args.filenames)
 
 
 if __name__ == "__main__":
