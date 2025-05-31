@@ -19,10 +19,14 @@ This repository provides a [pre-commit](https://pre-commit.com/) hook for valida
 2. **Add the hook to your `.pre-commit-config.yaml`:**
 
     ```yaml
-    - repo: https://github.com/your-org/spdx-checker-pre-commit
-      rev: v0.1.0  # Use the latest tag or commit
-      hooks:
-         - id: spdx-checker
+    - repo: https://github.com/to-sta/spdx-checker-pre-commit
+        rev: v0.1.1 # Add the most recent version here
+        hooks:
+        - id: spdx-license-checker
+            name: spdx-license-checker
+            args: [-l, AGPL-3.0-or-later]
+            language_version: python3.13
+            types_or: [python, ts, javascript, vue, css, html]
     ```
 
 3. **Install the hook:**
@@ -31,11 +35,6 @@ This repository provides a [pre-commit](https://pre-commit.com/) hook for valida
     pre-commit install
     ```
 
-4. **Run on all files:**
-
-    ```bash
-    pre-commit run --all-files
-    ```
 
 ## Requirements
 
