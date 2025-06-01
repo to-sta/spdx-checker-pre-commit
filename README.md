@@ -25,7 +25,6 @@ This repository provides a [pre-commit](https://pre-commit.com/) hook for valida
         - id: spdx-license-checker
             name: spdx-license-checker
             args: [-l, AGPL-3.0-or-later]
-            language_version: python3.13
             types_or: [python, ts, javascript, vue, css, html]
     ```
 
@@ -38,7 +37,8 @@ This repository provides a [pre-commit](https://pre-commit.com/) hook for valida
 
 ## Requirements
 
-- Python 3.13+
+- Python >=3.11 for Linux and MacOS
+- Python >=3.13 for Windows
 - [`spdx-checker`](https://pypi.org/project/spdx-checker/)
 
 ## License
