@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 from __future__ import annotations
 
 from argparse import ArgumentParser
@@ -38,7 +39,10 @@ def main(argv: Sequence[str] | None = None) -> None:
         parser.print_help()
         raise ValueError("License and filenames are required arguments.")
 
-    spdx_checker.check_license(args.license, args.filenames)
+    try:
+        spdx_checker.check_license(args.license, args.filenames)
+    except ValueError:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

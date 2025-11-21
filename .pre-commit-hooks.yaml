@@ -3,4 +3,5 @@
   description: Check for SPDX license identifiers in files
   entry: spdx_checker_pre_commit
   language: python
+  require_serial: true
   stages: [pre-commit]
