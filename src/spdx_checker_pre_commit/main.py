@@ -21,26 +21,42 @@ def main(argv: Sequence[str] | None = None) -> None:
     Raises:
         SystemExit: If the arguments are not valid or if the license is not found.
     """
-
     parser = ArgumentParser()
     parser.add_argument(
-        "-l", "--license", type=str, help="SPDX license identifier to check for."
+        "-l",
+        "--license",
+        type=str,
+        required=True,
+        help="SPDX license identifier to check for.",
     )
     parser.add_argument(
         "filenames",
         type=str,
-        nargs="*",
+        nargs="+",
         help="List of files to check for SPDX license identifiers.",
+    )
+    parser.add_argument(
+        "-f",
+        "--fix",
+        action="store_true",
+        help="Add SPDX license identifier to files missing it.",
+    )
+    parser.add_argument(
+        "-c",
+        "--continue-on-error",
+        action="store_true",
+        help="Continue checking files even if an error occurs.",
     )
 
     args = parser.parse_args(argv)
 
-    if not args.license or not args.filenames:
-        parser.print_help()
-        raise ValueError("License and filenames are required arguments.")
-
     try:
-        spdx_checker.check_license(args.license, args.filenames)
+        spdx_checker.check_license(
+            args.license,
+            args.filenames,
+            fix=args.fix,
+            continue_on_error=args.continue_on_error,
+        )
     except ValueError:
         raise SystemExit(1)
 

@@ -24,7 +24,7 @@ This repository provides a [pre-commit](https://pre-commit.com/) hook for valida
         hooks:
         - id: spdx-license-checker
             name: spdx-license-checker
-            args: [-l, AGPL-3.0-or-later]
+            args: [-l, AGPL-3.0-or-later, --fix, --continue-on-error]
             types_or: [python, ts, javascript, vue, css, html]
     ```
 
